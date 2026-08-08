@@ -57,4 +57,37 @@ We bill the Included section with delivery-focused promises (map, click-to-call,
 
 ---
 
+## Buyer research round 2 — plain language & "why you need a site"
+
+Added when the site was rewritten for owners who are older, busy, or not fluent in English.
+
+### The "why" numbers (used in the Why section, sources printed under it)
+
+| Claim | Source |
+|---|---|
+| 3 in 4 people who search a local business on a phone visit or call it the same day | Google micro-moments, cited by SearchLab 2026, Backlinko 2024 |
+| 46% of all Google searches are about something nearby | Hartford / HubSpot 2025 |
+| 200+ million "near me" searches a month | Glimpse, 2024/2026 |
+| 8 of 10 small businesses already have a website (75% for 1–9 employees) | NFIB Technology Survey 2025 |
+| Many small owners use social media instead of a website | Small Business Majority 2024 (41% of owners use social media); BIPOC-owned 65% have sites vs 77% white-owned |
+| ~1 in 4 US small businesses still has no website | B2BLeadFinder 2026 estimates (27%) |
+
+### Plain-language rules that shaped the rewrite (src: digital.gov, WebAIM)
+
+- Short sentences, present tense, active voice; avoid hidden verbs (nominalizations).
+- One clear job per paragraph; one next step per page.
+- Write for the reader's knowledge, not ours (WebAIM: assume intelligence, not background).
+- Target around an 8th-grade reading level for a broad audience (HHS guidance).
+
+### Anti-AI-tell / trust rules that shaped the rewrite (src: Searchlab "AI website copy", 2026)
+
+- No em dashes for drama; no em dashes at all in visible copy.
+- Ban list: "in today's...", leverage, harness, elevate, transform (non-literal), seamless, unlock, cutting-edge, best-in-class, empower, game-changer, world-class.
+- No three-part adjective lists; no "so you can focus on what you do best".
+- Add one specific, verifiable detail per section (numbers, names, places).
+- Read it out loud: "coffee table test" beats "sounds like a marketing department".
+- One primary CTA per page, said with the same words every time.
+
+---
+
 Update this file when prices change, ratings move, or features get real clients.

@@ -6,7 +6,7 @@ Live site: https://cybershare.dev · Repo: https://github.com/dustindog101/cyber
 
 ## What this is
 
-A single-page marketing site selling a local-biz web design service. It is itself a demonstration of the product: phone-first, fast, honest pricing, minimal, and low-dependency. It features a fictional sample client ("Harbor Kitchen") and real DMV businesses as "local spots we build for" (see docs for the honesty guardrails).
+A single-page marketing site selling a local-biz web design service, written in plain English for owners who may be older or non-native speakers: short sentences, no em dashes, no prices published (price comes after a call), and a "why you need a website" pitch with honest, sourced stats. It features a fictional example client ("Harbor Kitchen") and real DMV businesses as "local places we build for" (see docs for the honesty guardrails).
 
 ## Docs
 
@@ -28,7 +28,7 @@ A single-page marketing site selling a local-biz web design service. It is itsel
 
 ```
 src/
-  components/   Hero, Services, Included, Pricing, Process, Locals, CTA, Header, Footer
+  components/   Hero, Why, Services, Included, Pricing, Process, Locals, CTA, Header, Footer
   layouts/      BaseLayout (SEO meta, fonts, JSON-LD)
   pages/        index.astro
   styles/       global.css — tokens + component styles

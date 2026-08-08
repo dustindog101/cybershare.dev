@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
+import Why from '../components/Why.astro';
 import Services from '../components/Services.astro';
 import Included from '../components/Included.astro';
 import Pricing from '../components/Pricing.astro';
@@ -11,10 +12,14 @@ import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="Cybershare Design — Websites for Restaurants, Auto Shops & Local Business" description="Fast, phone-first websites for restaurants, auto shops, and small businesses across the DMV and Baltimore. One fixed price, everything yours.">
+<BaseLayout
+  title="Cybershare Design — Websites for Restaurants, Auto Shops & Local Business"
+  description="Simple websites for local businesses: restaurants, shops, and auto repair. You own the site, you get free changes for 30 days, and you see your price before we start. Contact us."
+>
   <Header />
   <main id="main">
     <Hero />
+    <Why />
     <Services />
     <Included />
     <Pricing />

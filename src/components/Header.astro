@@ -1,9 +1,9 @@
 ---
 const links = [
-  { href: '#services', label: 'Our work' },
-  { href: '#included', label: 'What\'s included' },
-  { href: '#pricing', label: 'Packages' },
-  { href: '#process', label: 'Process' },
+  { href: '#why', label: 'Why a website' },
+  { href: '#services', label: 'Our sites' },
+  { href: '#pricing', label: 'Your price' },
+  { href: '#process', label: 'How it works' },
   { href: '#locals', label: 'Local favorites' },
 ];
 ---
@@ -33,7 +33,7 @@ const links = [
       {links.map((l) => (
         <li><a href={l.href}>{l.label}</a></li>
       ))}
-      <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#contact">Get a free quote</a></li>
+      <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#contact">Get your price</a></li>
     </ul>
     <button
       id="navBurger"

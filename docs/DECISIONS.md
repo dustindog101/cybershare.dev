@@ -32,11 +32,24 @@ Every decision below was made deliberately during the initial build. When you ch
 
 **Why.** Social proof works, fabricating reviews is both risky and wrong. These businesses are not clients (yet) — the section says "the businesses we build for", not "our clients". The sample client "Harbor Kitchen" in the hero is explicitly fictional.
 
-## AD-05 — Pricing: three fixed one-time tiers + small add-ons
+## AD-05 — No public prices; price comes after contact (supersedes old price tiers)
 
-**Decision.** Start $395 / Grow $1,100 (flagged "Most chosen") / Own $1,400, all one-time, everything yours; adds-ons (menus/ordering from $250, booking from $200, photo shoots from $350, hosting+edits $35/mo, second language from $150).
+**Decision (revised).** The site no longer lists dollar amounts. The price section says we send one clear price after a short conversation, and that the price depends on the size of the site, the extras, and nothing else hidden.
 
-**Why.** Reads plainly to small-business owners; competes with DIY drag-drop builders on *fixed* (no surprise invoices) instead of rate. Alignment with competitor research (FactoryJet, DirectOrders, LuperIQ — see `docs/RESEARCH.md`).
+**Why.** The original build published tiers (Start $395 / Grow $1,100 / Own $1,400) and "from $599" service prices. The audience is very small, has no customer base yet, and sells to owners who often are older or speak English as a second language. For them a list of three plans reads as an upsell. A plain "you get your price before we build, and it depends on what you need" builds more trust and lets each quote be scoped to the business. The old tiers remain the internal pricing baseline (see RESEARCH.md); they are just not published.
+
+## AD-10 — Plain-English rewrite: why-first, no em dashes, no AI-tells
+
+**Decision.** The whole site was rewritten for the actual buyer: owners who may be older, busy, or not fluent in English. Rules:
+
+- **No em dashes** in any visible copy (page title and CSS comments excepted).
+- **No AI-sounding phrases**: leverage, seamless, elevate, unlock, cutting-edge, world-class, "in today's...", three-part adjective lists, generic superlatives.
+- **Short sentences, active voice, present tense**, per plainlanguage.gov / WebAIM guidance. Target: about an 8th-grade reading level.
+- **Why-first structure**: a new "Why does your business need a website?" section leads the pitch with honest, sourced numbers (76% of local searches visit a business the same day, Google/Nectafy; 8 of 10 small businesses have a site, NFIB 2025; many owners use Facebook instead of a website, Small Business Majority 2024). Sources are printed in small type under the section.
+- **Price on request**: see AD-05.
+- **Two languages**: a site can be built in English plus a second language for owners whose customers speak another language (added to Included).
+
+**Why.** The site must capture a person who has never bought a website and is not tech-curious. Plain language and honest numbers out-perform clever marketing for this buyer (per the AI-copy research in RESEARCH.md, "coffee table test" and specificity rules).
 
 ## AD-06 — No hero stock photo; a live browser-mockup preview instead
 

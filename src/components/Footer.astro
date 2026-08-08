@@ -1,7 +1,5 @@
 ---
 const year = new Date().getFullYear();
-const explore = ['Our work', "What's included", 'Packages', 'Process', 'Local favorites'];
-const hrefs = ['#services', '#included', '#pricing', '#process', '#locals'];
 ---
 
 <footer class="footer">
@@ -12,12 +10,16 @@ const hrefs = ['#services', '#included', '#pricing', '#process', '#locals'];
           <span class="nav__logo-mark" aria-hidden="true">C</span>
           <span>cybershare<span class="dot">.</span>dev</span>
         </a>
-        <p>Websites for restaurants, auto shops, and every local business in between. Built in the DMV, made for Main Street.</p>
+        <p>Websites for restaurants, auto shops, and every local business in between. Built in the DMV, made for Main Street. We explain everything in plain English.</p>
       </div>
       <div>
         <h4>Explore</h4>
         <ul>
-          {explore.map((c, i) => <li><a href={hrefs[i]}>{c}</a></li>)}
+          <li><a href="#why">Why a website</a></li>
+          <li><a href="#services">Our sites</a></li>
+          <li><a href="#pricing">Your price</a></li>
+          <li><a href="#process">How it works</a></li>
+          <li><a href="#locals">Local favorites</a></li>
         </ul>
       </div>
       <div>
@@ -37,8 +39,8 @@ const hrefs = ['#services', '#included', '#pricing', '#process', '#locals'];
       </div>
     </div>
     <div class="footer__bottom">
-      <p>© {year} Cybershare Design. Fixed-price websites for local business.</p>
-      <p>Vercel-hosted · 100% serverless</p>
+      <p>© {year} Cybershare Design. Websites for local businesses.</p>
+      <p>Made in Maryland, for Main Street.</p>
     </div>
   </div>
 </footer>

@@ -1,0 +1,68 @@
+---
+const rows = [
+  {
+    title: 'People look online before they decide',
+    body: '3 out of 4 people who search for a nearby business on their phone visit or call it the same day. If your business does not show up, that family goes to the place that does.',
+  },
+  {
+    title: 'Your Facebook page is not enough',
+    body: 'Facebook is where friends talk. Google is where customers look. Most small businesses have Facebook but no website, so the door closed for new customers. A simple website: open 24 hours, works every day.',
+  },
+  {
+    title: 'Your competitors already have one',
+    body: 'About 8 out of 10 small businesses your size already have a website. If the site next to yours shows a menu and prices and yours shows nothing, the choice is made before the call.',
+  },
+  {
+    title: 'A website does not argue',
+    body: 'No missed calls at lunch. No wrong answers at midnight. The website tells customers your hours, your menu, your prices, and how to find you. Then the phone rings when you are ready.',
+  },
+];
+---
+
+<section class="section section--paper container" id="why">
+  <div class="section-head reveal">
+    <h2>Why does your business need a website?</h2>
+    <p>You have run a good business for years. Here is what changed: customers now start on their phone, not in the phone book.</p>
+  </div>
+
+  <div class="why">
+    {rows.map((r, i) => (
+      <article class="why__row reveal" style={`transition-delay: ${i * 60}ms`}>
+        <span class="why__num" aria-hidden="true">{i + 1}</span>
+        <div class="why__copy">
+          <h3 class="why__title">{r.title}</h3>
+          <p class="why__body">{r.body}</p>
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <p class="why__source reveal">
+    Sources: Google / Nectafy (people who search for a local business on a phone visit, call, or buy within a day), Small Business Majority 2024 (many owners pick social media instead of a website), NFIB 2025 (8 of 10 small businesses have a website).
+  </p>
+</section>
+
+<style>
+  .section--paper { background: var(--paper-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .why { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .why__row {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--r-md);
+    padding: 30px 30px 24px; box-shadow: var(--shadow-sm);
+    display: flex; gap: 18px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .why__row:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .why__num {
+    flex: none; width: 38px; height: 38px; border-radius: 11px;
+    background: var(--accent-soft); color: var(--accent-deep);
+    display: grid; place-items: center;
+    font-family: var(--font-mono); font-size: 0.9rem; font-weight: 650;
+  }
+  .why__title { font-size: 1.12rem; letter-spacing: -0.015em; }
+  .why__body { margin-top: 8px; color: var(--ink-2); font-size: 0.95rem; line-height: 1.6; }
+  .why__source { margin-top: 24px; font-size: 0.8rem; color: var(--ink-3); max-width: 70ch; line-height: 1.6; }
+
+  @media (max-width: 880px) {
+    .why { grid-template-columns: 1fr; }
+  }
+</style>
