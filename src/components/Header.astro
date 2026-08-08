@@ -1,0 +1,48 @@
+---
+const links = [
+  { href: '#services', label: 'Our work' },
+  { href: '#included', label: 'What\'s included' },
+  { href: '#pricing', label: 'Packages' },
+  { href: '#process', label: 'Process' },
+  { href: '#locals', label: 'Local favorites' },
+];
+---
+
+<script>
+  const burger = document.getElementById('navBurger');
+  const links = document.getElementById('navLinks');
+  burger?.addEventListener('click', () => {
+    const open = links?.classList.toggle('open');
+    burger.setAttribute('aria-expanded', String(open));
+  });
+  links?.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => {
+      links.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    })
+  );
+</script>
+
+<header class="nav">
+  <nav class="container nav__inner" aria-label="Main">
+    <a class="nav__logo" href="#top" aria-label="Cybershare Design home">
+      <span class="nav__logo-mark" aria-hidden="true">C</span>
+      <span>cybershare<span class="dot">.</span>dev</span>
+    </a>
+    <ul class="nav__links" id="navLinks">
+      {links.map((l) => (
+        <li><a href={l.href}>{l.label}</a></li>
+      ))}
+      <li class="nav__cta"><a class="btn btn--primary btn--sm" href="#contact">Get a free quote</a></li>
+    </ul>
+    <button
+      id="navBurger"
+      class="nav__burger"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="links"
+    >
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </nav>
+</header>

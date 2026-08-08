@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Included from '../components/Included.astro';
+import Pricing from '../components/Pricing.astro';
+import Process from '../components/Process.astro';
+import Locals from '../components/Locals.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Cybershare Design — Websites for Restaurants, Auto Shops & Local Business" description="Fast, phone-first websites for restaurants, auto shops, and small businesses across the DMV and Baltimore. One fixed price, everything yours.">
+  <Header />
+  <main id="main">
+    <Hero />
+    <Services />
+    <Included />
+    <Pricing />
+    <Process />
+    <Locals />
+    <CTA />
+  </main>
+  <Footer />
+
+  <script>
+    // Reveal-on-scroll via IntersectionObserver (respects prefers-reduced-motion in CSS)
+    const els = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('in');
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+      );
+      els.forEach((el) => io.observe(el));
+    } else {
+      els.forEach((el) => el.classList.add('in'));
+    }
+  </script>
+</BaseLayout>

@@ -1,0 +1,131 @@
+---
+const services = [
+  {
+    id: 'restaurants',
+    title: 'Restaurants & cafés',
+    price: 'from $599',
+    blurb: 'Menus people can actually read on a phone, order links, and hours that never lie.',
+    points: [
+      'Tap-to-call, hours, and a live map',
+      'Order & reservation links, wired in',
+      'Easy specials and hour changes',
+      'Local SEO so "tacos near me" finds your kitchen',
+    ],
+  },
+  {
+    id: 'auto',
+    title: 'Auto shops & garages',
+    price: 'from $599',
+    blurb: 'Service pages that book appointments while the phone is busy.',
+    points: [
+      'Service pages for brakes, tires, oil, inspections',
+      'Appointment requests that ask the right questions',
+      'ASE and credentials, front and center',
+      'Your best Google reviews, woven in',
+    ],
+  },
+  {
+    id: 'other',
+    title: 'Every other local business',
+    price: 'from $395',
+    blurb: 'Salons, gyms, dentists, landscapers, boutiques, food trucks, services of all kinds.',
+    points: [
+      'One clear booking or call path, everywhere',
+      'The five questions customers actually ask, answered',
+    ],
+  },
+];
+---
+
+<section class="section container" id="services">
+  <div class="section-head reveal">
+    <h2>Websites, scoped to how your day actually goes</h2>
+    <p>A good local site answers the one question customers have, then makes the next step one tap away.</p>
+  </div>
+
+  <div class="bento">
+    <article class="bento__card bento__card--main reveal">
+      <div class="bento__top">
+        <span class="bento__num">01</span>
+        <span class="bento__pill">Restaurants &amp; cafés</span>
+      </div>
+      <p class="bento__label">from $599 · one-time</p>
+      <h3 class="bento__title">Menus that read like the real thing</h3>
+      <ul class="bento__list">
+        <li>Tap-to-call, hours, and a live map</li>
+        <li>Online ordering and reservation links, wired in</li>
+        <li>Easy specials and hour changes</li>
+        <li>Local SEO, so "tacos near me" finds your kitchen first</li>
+      </ul>
+    </article>
+
+    <article class="bento__card bento__card--tall reveal">
+      <div class="bento__top">
+        <span class="bento__num">02</span>
+        <span class="bento__tag">Auto shops &amp; garages</span>
+      </div>
+      <p class="bento__label">from $599 · one-time</p>
+      <h3 class="bento__title">Service pages that book appointments</h3>
+      <ul class="bento__list">
+        <li>Pages for brakes, oil, tires, inspections, diagnostics</li>
+        <li>Appointment requests that collect what your estimate needs</li>
+        <li>ASE and certifications, front and center</li>
+        <li>Your best Google reviews woven into the site</li>
+      </ul>
+    </article>
+
+    <article class="bento__card bento__card--wide reveal">
+      <div class="bento__top">
+        <span class="bento__num">03</span>
+      </div>
+      <h3 class="bento__title">Every other local business</h3>
+      <p class="bento__blurb">Salons, gyms, dentists, landscapers, boutiques, food trucks, services of all kinds. You don't need forty pages; you need a focused build that looks serious and turns a search into a phone call.</p>
+      <div class="bento__meta">
+        <span class="chip"><b>from $395</b> one-time</span>
+        <span class="bento__tagline">One clear call or booking path, everywhere</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<style>
+  .bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 22px; }
+  .bento__card {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--r-md);
+    padding: 30px 28px; box-shadow: var(--shadow-sm);
+    display: flex; flex-direction: column; gap: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .bento__card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--line-2); }
+  .bento__card--main { grid-column: span 4; }
+  .bento__card--tall { grid-column: span 2; grid-row: span 2; background: var(--ink); color: #f7f3ee; border-color: var(--ink); }
+  .bento__card--wide { grid-column: span 4; }
+  .bento__top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .bento__num { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); }
+  .bento__tag {
+    background: var(--accent-soft); color: var(--accent-deep); border-radius: var(--r-pill);
+    padding: 5px 12px; font-size: 0.72rem; font-weight: 620; letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .bento__card--tall .bento__tag { background: rgba(255,255,255,0.12); color: #ffc9a3; }
+  .bento__label { font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-3); letter-spacing: 0.04em; }
+  .bento__card--tall .bento__label { color: #b8b0a6; }
+  .bento__title { font-size: 1.3rem; letter-spacing: -0.02em; }
+  .bento__list { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+  .bento__list li {
+    display: flex; gap: 10px; align-items: flex-start;
+    font-size: 0.94rem; color: var(--ink-2); line-height: 1.45;
+  }
+  .bento__list li::before { content: "✓"; flex: none; font-size: 0.82rem; font-weight: 700; color: var(--accent); margin-top: 2px; }
+  .bento__card--tall .bento__list li { color: #d8d2c9; }
+  .bento__card--tall .bento__list li::before { color: #faa968; }
+  .bento__blurb { color: var(--ink-2); font-size: 0.98rem; max-width: 58ch; }
+  .bento__meta { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: auto; padding-top: 10px; }
+  .bento__tagline { font-size: 0.86rem; color: var(--ink-3); }
+  .bento__card--tall .bento__title { margin-top: 8px; }
+
+  @media (max-width: 960px) {
+    .bento { grid-template-columns: 1fr; }
+    .bento__card--main, .bento__card--tall, .bento__card--wide { grid-column: auto; }
+  }
+</style>

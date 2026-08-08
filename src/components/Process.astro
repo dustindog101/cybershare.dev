@@ -1,0 +1,61 @@
+---
+const steps = [
+  {
+    num: '01',
+    title: 'Brief',
+    body: 'A relaxed call about your business, your customers, and what done looks like. You get a clear scope and fixed price.',
+  },
+  {
+    num: '02',
+    title: 'Build',
+    body: 'You settle on the pages. We build the first version, true to your business. First draft on your phone in days.',
+  },
+  {
+    num: '03',
+    title: 'Refine',
+    body: 'One revision round on us, with an eye for the details that matter: hours, wording, photos, menu prices.',
+  },
+  {
+    num: '04',
+    title: 'Launch + beyond',
+    body: 'Live on your domain, walkthrough done. Then 30 days of edits on us, while we keep an eye on it.',
+  },
+];
+---
+
+<section class="section section--paper container" id="process">
+  <div class="section-head reveal">
+    <h2>A build, in four steps</h2>
+    <p>You will know what is happening at every step, and nothing ships without your okay.</p>
+  </div>
+
+  <div class="steps">
+    {steps.map((s, i) => (
+      <article class="step reveal" style={`transition-delay: ${i * 70}ms`}>
+        <span class="step__num">{s.num}</span>
+        <h3 class="step__title">{s.title}</h3>
+        <p class="step__body">{s.body}</p>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .section--paper { background: var(--paper-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; position: relative; }
+  .step { position: relative; padding-top: 6px; }
+  .step__num {
+    display: inline-grid; place-items: center;
+    width: 42px; height: 42px; border-radius: 12px;
+    background: var(--card); border: 1px solid var(--line-2);
+    font-family: var(--font-mono); font-size: 0.82rem; font-weight: 600; color: var(--accent);
+  }
+  .step__title { margin-top: 16px; font-size: 1.08rem; }
+  .step__body { margin-top: 8px; color: var(--ink-2); font-size: 0.92rem; }
+  @media (max-width: 960px) {
+    .steps { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    .steps { grid-template-columns: 1fr; }
+  }
+</style>

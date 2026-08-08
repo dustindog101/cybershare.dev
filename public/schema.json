@@ -1,0 +1,14 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Cybershare Design",
+  "url": "https://cybershare.dev",
+  "description": "We design and build fast, mobile-first websites for local restaurants, auto shops, and small businesses across the DMV and Baltimore. One fixed price, you own everything.",
+  "areaServed": ["Baltimore, MD", "Rockville, MD", "Bethesda, MD", "Washington, DC"],
+  "priceRange": "$395 - $1,400",
+  "makesOffer": [
+    { "@type": "Offer", "name": "Restaurant websites", "description": "Menu-first websites with online ordering links, reservations, and local SEO." },
+    { "@type": "Offer", "name": "Auto shop websites", "description": "Service pages, appointment requests, ASE credentials, and local SEO." },
+    { "@type": "Offer", "name": "Small business websites", "description": "Focused builds for salons, shops, trades, and services." }
+  ]
+}

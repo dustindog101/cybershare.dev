@@ -1,0 +1,152 @@
+---
+const stats = [
+  { value: '14', unit: 'days', label: 'to launch, on average' },
+  { value: '100', unit: '%', label: 'ownership, always yours' },
+  { value: '30', unit: 'days', label: 'of free post-launch edits' },
+  { value: '1', unit: '', label: 'fixed price, agreed up front' },
+];
+---
+
+<section class="hero container" id="top">
+  <div class="hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow">Website design for local business</p>
+      <h1>Websites that turn searchers into <em>regulars</em>.</h1>
+      <p class="hero__sub">
+        Fast, phone-first sites for restaurants, auto shops, and local businesses. One fixed price, everything yours.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#contact">Get a free quote</a>
+        <a class="btn btn--ghost" href="#pricing">See packages</a>
+      </div>
+    </div>
+
+    <!--
+      REAL component preview: an actual mini-version of a restaurant
+      client site (phone view) rendered live in the page. Not a
+      screenshot, not a mock: real UI, real markup.
+    -->
+    <div class="hero__visual" aria-hidden="true">
+      <div class="browser">
+        <div class="browser__bar">
+          <span class="browser__dot"></span><span class="browser__dot"></span><span class="browser__dot"></span>
+          <span class="browser__url">harborkitchenmd.com</span>
+        </div>
+        <div class="browser__body">
+          <p class="browser__crown">4.9 ★ · 126 reviews</p>
+          <h3 class="browser__name">Harbor Kitchen</h3>
+          <p class="browser__tagline">Family-owned · Greek &amp; Mediterranean</p>
+
+          <div class="browser__menu">
+            <div class="menu-item"><span class="menu-item__name">Lamb Souvlaki Plate</span><span class="menu-item__price">$19</span></div>
+            <div class="menu-item"><span class="menu-item__name">Moussaka</span><span class="menu-item__price">$17</span></div>
+            <div class="menu-item"><span class="menu-item__name">Grilled Octopus</span><span class="menu-item__price">$23</span></div>
+            <div class="menu-item"><span class="menu-item__name">Baklava</span><span class="menu-item__price">$7</span></div>
+          </div>
+
+          <div class="browser__actions">
+            <span class="browser__btn">Call to order</span>
+            <span class="browser__btn browser__btn--ghost">Full menu</span>
+          </div>
+          <p class="browser__hours">Open today · 11:00 – 22:00</p>
+        </div>
+      </div>
+
+      <div class="hero-chip hero-chip--top">
+        <span class="hero-chip__label">LIVE SITE</span>
+        <span class="hero-chip__value">Menus, maps, one-tap calls</span>
+      </div>
+      <div class="hero-chip hero-chip--bottom">
+        <span class="hero-chip__label">YOURS</span>
+        <span class="hero-chip__value">Domain + every file</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__stats">
+    {stats.map((s) => (
+      <div class="stat">
+        <span class="stat__value">{s.value}<span class="stat__unit">{s.unit}</span></span>
+        <span class="stat__label">{s.label}</span>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .hero { padding-top: 72px; }
+  .hero__grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 64px; align-items: center; }
+  .hero h1 { font-size: clamp(2.5rem, 5.2vw, 3.8rem); letter-spacing: -0.035em; line-height: 1.06; }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero__sub { margin-top: 22px; font-size: 1.14rem; color: var(--ink-2); max-width: 44ch; }
+  .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
+
+  /* browser preview */
+  .hero__visual { position: relative; }
+  .browser {
+    background: var(--card); border: 1px solid var(--line-2); border-radius: var(--r-md);
+    box-shadow: var(--shadow-md); overflow: hidden;
+  }
+  .browser__bar {
+    display: flex; align-items: center; gap: 6px; padding: 11px 14px;
+    border-bottom: 1px solid var(--line); background: var(--paper-2);
+  }
+  .browser__dot { width: 10px; height: 10px; border-radius: 50%; background: var(--line-2); }
+  .browser__dot:nth-child(1) { background: #e07a56; }
+  .browser__dot:nth-child(2) { background: #e3b55c; }
+  .browser__dot:nth-child(3) { background: #6fae74; }
+  .browser__url {
+    margin-left: 8px; font-family: var(--font-mono); font-size: 0.68rem; color: var(--ink-3);
+    background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 3px 10px;
+  }
+  .browser__body { padding: 24px 26px 26px; }
+  .browser__crown { font-family: var(--font-mono); font-size: 0.7rem; color: var(--star); letter-spacing: 0.06em; }
+  .browser__name { font-size: 1.5rem; margin-top: 6px; }
+  .browser__tagline { color: var(--ink-2); font-size: 0.85rem; margin-top: 2px; }
+  .browser__menu { margin-top: 18px; border-top: 1px dashed var(--line-2); }
+  .menu-item {
+    display: flex; justify-content: space-between; gap: 16px;
+    padding: 9px 0; border-bottom: 1px dashed var(--line);
+    font-size: 0.88rem;
+  }
+  .menu-item__price { font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-3); }
+  .browser__actions { display: flex; gap: 10px; margin-top: 18px; }
+  .browser__btn {
+    background: var(--accent); color: #fff; border-radius: var(--r-pill); padding: 10px 18px;
+    font-size: 0.8rem; font-weight: 600;
+  }
+  .browser__btn--ghost { background: transparent; color: var(--ink); border: 1px solid var(--line-2); }
+  .browser__hours { margin-top: 14px; font-size: 0.78rem; color: var(--ink-3); }
+
+  /* chips */
+  .hero-chip {
+    position: absolute; display: flex; flex-direction: column; gap: 2px;
+    background: var(--card); border: 1px solid var(--line-2); border-radius: var(--r-sm);
+    padding: 10px 16px; box-shadow: var(--shadow-md);
+  }
+  .hero-chip--top { top: -18px; left: -22px; }
+  .hero-chip--bottom { bottom: -20px; right: -14px; }
+  .hero-chip__label { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.14em; color: var(--ink-3); }
+  .hero-chip__value { font-weight: 620; font-size: 0.86rem; color: var(--ink); }
+
+  /* stats */
+  .hero__stats {
+    margin-top: 72px; padding-top: 30px; border-top: 1px solid var(--line);
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  }
+  .stat { display: flex; flex-direction: column; gap: 4px; }
+  .stat__value { font-size: 1.7rem; font-weight: 650; letter-spacing: -0.02em; }
+  .stat__unit { font-size: 0.95rem; color: var(--accent); margin-left: 2px; font-weight: 600; }
+  .stat__label { font-size: 0.82rem; color: var(--ink-3); }
+
+  @media (max-width: 960px) {
+    .hero__grid { grid-template-columns: 1fr; gap: 56px; }
+    .hero__stats { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .hero-chip--top { left: 8px; top: -16px; }
+    .hero-chip--bottom { right: 8px; bottom: -18px; }
+  }
+  @media (max-width: 560px) {
+    .hero { padding-top: 48px; }
+    .hero__stats { grid-template-columns: 1fr 1fr; }
+  }
+</style>

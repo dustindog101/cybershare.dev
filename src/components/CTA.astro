@@ -1,0 +1,79 @@
+---
+const points = ['We reply within a day', 'Free site sketch, no strings', 'No credit card, no commitment'];
+---
+
+<section class="section container" id="contact">
+  <div class="cta reveal">
+    <div class="cta__copy">
+      <p class="cta__eyebrow">Start your project</p>
+      <h2>Your customers are already on their phones. Give them somewhere to land.</h2>
+      <p class="cta__sub">
+        Tell us one thing about your business and we'll sketch what your site looks like, free, on a call. No strings, no pitch theater.
+      </p>
+      <div class="cta__actions">
+        <a class="btn btn--light" href="mailto:hello@cybershare.dev?subject=Site%20for%20my%20business">
+          hello@cybershare.dev
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <ul class="cta__points">
+        {points.map((p) => <li>{p}</li>)}
+      </ul>
+    </div>
+    <div class="cta__card" aria-hidden="true">
+      <p class="cta__card-label">THE QUOTE, OPEN</p>
+      <p class="cta__card-number">$599</p>
+      <p class="cta__card-note">fixed · one-time · everything included</p>
+      <div class="cta__card-bar"><span style="width: 68%"></span></div>
+      <p class="cta__card-caption">Scope confirmed on the first call</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta {
+    background: var(--ink);
+    border-radius: var(--r-lg);
+    padding: clamp(40px, 6vw, 68px);
+    display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center;
+    color: #f4f0ea;
+    position: relative; overflow: hidden;
+  }
+  .cta::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(600px 300px at 85% 15%, rgba(217, 106, 43, 0.25), transparent 60%),
+      radial-gradient(500px 260px at 10% 90%, rgba(199, 74, 24, 0.18), transparent 60%);
+    pointer-events: none;
+  }
+  .cta__copy { position: relative; }
+  .cta__eyebrow {
+    font-family: var(--font-mono); font-size: 0.76rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: #faa968; margin-bottom: 18px;
+  }
+  .cta h2 { color: #fdfbf8; font-size: clamp(1.7rem, 3.4vw, 2.5rem); letter-spacing: -0.028em; max-width: 18ch; }
+  .cta__sub { margin-top: 16px; color: #c9c2b8; max-width: 48ch; font-size: 1rem; }
+  .cta__actions { margin-top: 30px; }
+  .cta__points { margin-top: 24px; display: flex; gap: 18px; flex-wrap: wrap; }
+  .cta__points li {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.84rem; color: #b8b0a6;
+  }
+  .cta__points li::before { content: "✓"; color: #faa968; font-weight: 700; }
+
+  .cta__card {
+    position: relative; background: #fff; color: var(--ink);
+    border-radius: var(--r-md); padding: 30px 28px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+  }
+  .cta__card-label { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.14em; color: var(--accent); }
+  .cta__card-number { font-size: 3.2rem; font-weight: 660; letter-spacing: -0.03em; margin-top: 8px; line-height: 1; }
+  .cta__card-note { color: var(--ink-3); font-size: 0.9rem; margin-top: 6px; }
+  .cta__card-bar { margin-top: 22px; height: 8px; border-radius: 999px; background: var(--line); overflow: hidden; }
+  .cta__card-bar span { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--accent), #d96a2b); }
+  .cta__card-caption { margin-top: 10px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-3); }
+
+  @media (max-width: 880px) {
+    .cta { grid-template-columns: 1fr; }
+  }
+</style>

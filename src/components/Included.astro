@@ -1,0 +1,69 @@
+---
+const items = [
+  {
+    title: 'Mobile-first, every time',
+    body: 'Most of your customers find you on a phone. Your site is built thumb-first and stays fast on one.',
+  },
+  {
+    title: 'Local SEO, set up',
+    body: 'On-page tags, schema markup, your Google Business tie-ins, and a sitemap for Google.',
+  },
+  {
+    title: 'Map + click-to-call',
+    body: 'Your spot on a real map, your hours, and a call button within thumb reach.',
+  },
+  {
+    title: 'Analytics you can read',
+    body: 'We wire in basics and walk you through them, so "where do customers come from" has an answer.',
+  },
+  {
+    title: 'Simple editing',
+    body: 'We make hour and menu changes post-launch, or hand you an editing path you understand.',
+  },
+  {
+    title: '30 days of free edits',
+    body: 'After launch, a month of small changes included. Your feedback, our time, zero invoice.',
+  },
+];
+---
+
+<section class="section container" id="included">
+  <div class="section-head reveal">
+    <h2>Included on every build</h2>
+    <p>No line items, no add-on theater. This is the floor, not the ceiling.</p>
+  </div>
+
+  <div class="inc">
+    {items.map((item, i) => (
+      <div class="inc__row reveal" style={`transition-delay: ${i * 60}ms`}>
+        <span class="inc__check" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l5 5L20 7"/></svg>
+        </span>
+        <div>
+          <h3 class="inc__title">{item.title}</h3>
+          <p class="inc__body">{item.body}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .inc { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; background: var(--card); box-shadow: var(--shadow-sm); }
+  .inc__row { display: flex; gap: 18px; padding: 26px 28px; border-bottom: 1px solid var(--line); }
+  .inc__row:nth-child(odd) { border-right: 1px solid var(--line); }
+  .inc__row:nth-last-child(-n+2) { border-bottom: 0; }
+  .inc__check {
+    flex: none; width: 34px; height: 34px; border-radius: 10px;
+    background: var(--accent-soft); color: var(--accent-deep);
+    display: grid; place-items: center;
+  }
+  .inc__title { font-size: 1.04rem; letter-spacing: -0.01em; }
+  .inc__body { margin-top: 5px; color: var(--ink-2); font-size: 0.92rem; max-width: 46ch; }
+  @media (max-width: 880px) {
+    .inc { grid-template-columns: 1fr; }
+    .inc__row:nth-child(odd) { border-right: 0; }
+    .inc__row:nth-last-child(-n+2) { border-bottom: 1px solid var(--line); }
+    .inc__row:last-child { border-bottom: 0; }
+  }
+</style>

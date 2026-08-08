@@ -1,0 +1,129 @@
+---
+const plans = [
+  {
+    name: 'Start',
+    price: '$395',
+    note: 'one-time',
+    blurb: 'The page that gets you found and booked. The right start for most shops.',
+    features: [
+      'Single focused landing page',
+      'Mobile-first, with map, hours, call',
+      'Contact or booking form',
+      'Local SEO basics',
+      'Live within a week',
+    ],
+    cta: 'Get this',
+    featured: false,
+  },
+  {
+    name: 'Grow',
+    price: '$1,100',
+    note: 'one-time',
+    tag: 'Most chosen',
+    blurb: 'The full small-business site: menus or services, reviews, and an about page that earns trust.',
+    features: [
+      'Up to 5 structured pages',
+      'Menu or service catalogs built in',
+      'Review highlights from your profile',
+      'Analytics + search console access',
+      '2 rounds of feedback included',
+    ],
+    cta: 'Get a quote',
+    featured: true,
+  },
+  {
+    name: 'Own',
+    price: '$1,400',
+    note: 'one-time',
+    tag: 'For established spots',
+    blurb: 'For businesses ready to own online: booking, ordering, and content for years.',
+    features: [
+      'Up to 10 pages, blog-ready',
+      'Online ordering or booking links',
+      'Advanced local SEO + schema',
+      'Priority support for 90 days',
+      'Copy polish pass included',
+    ],
+    cta: 'Get a quote',
+    featured: false,
+  },
+];
+---
+
+<section class="section container" id="pricing">
+  <div class="section-head reveal">
+    <h2>One fixed price, agreed up front</h2>
+    <p>Pick a tier, we scope it on a call, and the number you see is the number you pay. You own everything: domain, files, and future.</p>
+  </div>
+
+  <div class="plans">
+    {plans.map((p) => (
+      <article class={`plan reveal ${p.featured ? 'plan--featured' : ''}`}>
+        {p.featured && <span class="plan__flag">Most chosen</span>}
+        <p class="plan__name">{p.name}</p>
+        <p class="plan__price">{p.price} <span class="plan__note">{p.note}</span></p>
+        <p class="plan__blurb">{p.blurb}</p>
+        <ul class="plan__list">
+          {p.features.map((f) => <li>{f}</li>)}
+        </ul>
+        <a class={`btn ${p.featured ? 'btn--primary' : 'btn--ghost'}`} href="#contact">{p.cta}</a>
+      </article>
+    ))}
+  </div>
+
+  <div class="addons reveal">
+    <div class="addons__head">
+      <h3>Worth mentioning later, not now</h3>
+      <p>These are common next steps, quoted before we start. Nothing hidden.</p>
+    </div>
+    <div class="addons__chips">
+      <span class="chip"><b>Menus &amp; ordering</b> from $250</span>
+      <span class="chip"><b>Booking &amp; scheduling</b> from $200</span>
+      <span class="chip"><b>Photo shoots</b> from $350</span>
+      <span class="chip"><b>Hosting &amp; edits</b> $35/mo</span>
+      <span class="chip"><b>Second language</b> from $150</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: stretch; }
+  .plan {
+    position: relative; background: var(--card); border: 1px solid var(--line); border-radius: var(--r-md);
+    padding: 34px 30px; display: flex; flex-direction: column; gap: 12px; box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .plan:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .plan--featured { border-color: var(--accent); box-shadow: var(--shadow-md); }
+  .plan__flag {
+    position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+    background: var(--accent); color: #fff; border-radius: var(--r-pill);
+    padding: 5px 16px; font-size: 0.7rem; font-weight: 650; letter-spacing: 0.08em; text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .plan__name { font-family: var(--font-mono); font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); }
+  .plan__price { font-size: 2.5rem; font-weight: 660; letter-spacing: -0.03em; line-height: 1; }
+  .plan__note { font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-3); font-weight: 400; letter-spacing: 0; }
+  .plan__blurb { color: var(--ink-2); font-size: 0.93rem; min-height: 3em; }
+  .plan__list { display: flex; flex-direction: column; gap: 10px; margin: 6px 0 18px; }
+  .plan__list li {
+    position: relative; padding-left: 24px; font-size: 0.92rem; color: var(--ink-2); line-height: 1.45;
+  }
+  .plan__list li::before {
+    content: "✓"; position: absolute; left: 0; top: 0; color: var(--accent); font-weight: 700; font-size: 0.85rem;
+  }
+  .plan .btn { margin-top: auto; }
+
+  .addons {
+    margin-top: 34px; background: var(--paper-2); border: 1px solid var(--line);
+    border-radius: var(--r-md); padding: 26px 30px;
+    display: flex; justify-content: space-between; align-items: center; gap: 26px; flex-wrap: wrap;
+  }
+  .addons h3 { font-size: 1.05rem; }
+  .addons p { color: var(--ink-3); font-size: 0.86rem; margin-top: 2px; }
+  .addons__chips { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  @media (max-width: 960px) {
+    .plans { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; }
+  }
+</style>

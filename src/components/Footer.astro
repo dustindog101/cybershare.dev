@@ -1,0 +1,57 @@
+---
+const year = new Date().getFullYear();
+const explore = ['Our work', "What's included", 'Packages', 'Process', 'Local favorites'];
+const hrefs = ['#services', '#included', '#pricing', '#process', '#locals'];
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="nav__logo" href="#top" aria-label="Cybershare Design home">
+          <span class="nav__logo-mark" aria-hidden="true">C</span>
+          <span>cybershare<span class="dot">.</span>dev</span>
+        </a>
+        <p>Websites for restaurants, auto shops, and every local business in between. Built in the DMV, made for Main Street.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          {explore.map((c, i) => <li><a href={hrefs[i]}>{c}</a></li>)}
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@cybershare.dev">hello@cybershare.dev</a></li>
+          <li><a href="#contact">Get a free quote</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Serving</h4>
+        <ul>
+          <li><a href="#locals" rel="nofollow">Baltimore</a></li>
+          <li><a href="#locals" rel="nofollow">Montgomery County</a></li>
+          <li><a href="#locals" rel="nofollow">The DMV</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© {year} Cybershare Design. Fixed-price websites for local business.</p>
+      <p>Vercel-hosted · 100% serverless</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const links = document.querySelectorAll('.footer a[href^="#"]');
+  links.forEach((a) =>
+    a.addEventListener('click', (e) => {
+      const t = document.querySelector(a.hash);
+      if (t) {
+        e.preventDefault();
+        t.scrollIntoView({ behavior: 'smooth' });
+      }
+    })
+  );
+</script>
