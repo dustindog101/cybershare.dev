@@ -3,32 +3,33 @@ const services = [
   {
     id: 'restaurants',
     title: 'Restaurants and cafés',
-    blurb: 'Show your menu, your hours, and how to order or book a table.',
+    blurb: 'Menus customers can read in one hand, orders that show up, and tables that get booked.',
     points: [
-      'Menu that reads well on a phone',
-      'Hours and address, always right',
-      'Order or reservation button',
-      'Google finds you when people near you are hungry',
+      'Order buttons for DoorDash, Uber Eats, Grubhub, or direct',
+      'Book a table, linked or built in',
+      'Menu and prices you can change yourself',
+      'Hours and location, always right on the page',
     ],
   },
   {
     id: 'auto',
     title: 'Auto shops and repair',
-    blurb: 'Show what you fix, why you are trusted, and how to book.',
+    blurb: 'Service pictures a customer can actually use to book a job.',
     points: [
-      'Pages for the work you do: brakes, tires, oil, inspections',
-      'Send an appointment request in two taps',
-      'Certifications and years of trust, up front',
-      'Your best customer reviews on the site',
+      'An appointment form that asks the right questions first',
+      'Pages for brakes, tires, oil, inspections, diagnostics',
+      'Certifications and years of experience, up front',
+      'A call button that is always one tap away',
     ],
   },
   {
     id: 'other',
     title: 'Every other local business',
-    blurb: 'Salons, cleaners, boutiques, food trucks, services of all kinds.',
+    blurb: 'Salons, cleaners, boutiques, barbers, food trucks, services of all kinds.',
     points: [
-      'One simple way to call or book, no matter the page',
-      'Answers to the questions customers ask the most',
+      'Bookings, calls, or WhatsApp, set up your way',
+      'Price list and services, easy for customers to read',
+      'Google Maps directions and reviews, connected',
     ],
   },
 ];
@@ -36,17 +37,17 @@ const services = [
 
 <section class="section container" id="services">
   <div class="section-head reveal">
-    <h2>Websites for businesses like yours</h2>
-    <p>A good website answers one question for a customer, then tells them the next step: call, order, or book.</p>
+    <h2>It does more than look nice</h2>
+    <p>Every site we build is a working part of your business: orders, bookings, calls, hours, and reviews, all working for you through one clean page.</p>
   </div>
 
   <div class="bento">
     <article class="bento__card bento__card--main reveal">
       <div class="bento__top">
         <span class="bento__num">01</span>
-        <span class="bento__pill">Restaurants and cafés</span>
+        <span class="bento__tag">Restaurants and cafés</span>
       </div>
-      <h3 class="bento__title">Menus that read like the real thing</h3>
+      <h3 class="bento__title">Menus that get orders</h3>
       <p class="bento__blurb">{services[0].blurb}</p>
       <ul class="bento__list">
         {services[0].points.map((p) => <li>{p}</li>)}
@@ -58,7 +59,7 @@ const services = [
         <span class="bento__num">02</span>
         <span class="bento__tag">Auto shops and repair</span>
       </div>
-      <h3 class="bento__title">Customers can see what you do</h3>
+      <h3 class="bento__title">Customers can book their own spot</h3>
       <p class="bento__blurb">{services[1].blurb}</p>
       <ul class="bento__list">
         {services[1].points.map((p) => <li>{p}</li>)}
@@ -72,7 +73,7 @@ const services = [
       <h3 class="bento__title">Every other local business</h3>
       <p class="bento__blurb">{services[2].blurb}</p>
       <div class="bento__meta">
-        <span class="bento__tagline">One clear next step, on every page</span>
+        <span class="bento__tagline">One clear next step on every page</span>
       </div>
     </article>
   </div>
@@ -95,11 +96,9 @@ const services = [
   .bento__tag {
     background: var(--accent-soft); color: var(--accent-deep); border-radius: var(--r-pill);
     padding: 5px 12px; font-size: 0.72rem; font-weight: 620; letter-spacing: 0.04em;
-    text-transform: uppercase;
+    text-transform: uppercase; white-space: nowrap;
   }
   .bento__card--tall .bento__tag { background: rgba(255,255,255,0.12); color: #ffc9a3; }
-  .bento__label { font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-3); letter-spacing: 0.04em; }
-  .bento__card--tall .bento__label { color: #b8b0a6; }
   .bento__title { font-size: 1.3rem; letter-spacing: -0.02em; }
   .bento__blurb { color: var(--ink-2); font-size: 0.95rem; max-width: 52ch; }
   .bento__card--tall .bento__blurb { color: #c9c2b8; }

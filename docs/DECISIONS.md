@@ -26,9 +26,9 @@ Every decision below was made deliberately during the initial build. When you ch
 
 **Why.** The audience is restaurant/auto-shop owners and their customers. Warm neutral reads "local, trustworthy, appetizing," not "startup template." Single accent keeps restraint — the local spots we represent earn trust through calm, not noise.
 
-## AD-04 — Copy: real local businesses featured, with honesty guardrails
+## AD-04 — Local favorites section (historical, superseded by AD-11)
 
-**Decision.** "Local favorites" section features real DMV businesses (Sheba Ethiopian, Temari Café, Regina's, Kenwood Sunoco, Japanese Car Care, JB Auto Repair) with real ratings and *condensed* real quotes from public Google reviews. A disclaim that sticks ("Quotes condensed from public Google reviews") sits directly beneath.
+**Decision.** Originally the site featured real DMV businesses (Sheba Ethiopian, Temari Café, Regina's, Kenwood Sunoco, Japanese Car Care, JB Auto Repair) with real ratings and condensed quotes from public Google reviews, plus a disclaimer. The section was removed in the functional-first round; see AD-11.
 
 **Why.** Social proof works, fabricating reviews is both risky and wrong. These businesses are not clients (yet) — the section says "the businesses we build for", not "our clients". The sample client "Harbor Kitchen" in the hero is explicitly fictional.
 
@@ -50,6 +50,19 @@ Every decision below was made deliberately during the initial build. When you ch
 - **Two languages**: a site can be built in English plus a second language for owners whose customers speak another language (added to Included).
 
 **Why.** The site must capture a person who has never bought a website and is not tech-curious. Plain language and honest numbers out-perform clever marketing for this buyer (per the AI-copy research in RESEARCH.md, "coffee table test" and specificity rules).
+
+## AD-11 — Functional-first redesign: results, integrations, no on-page sources
+
+**Decision (new round).** The site was re-cut to sell outcomes, not SEO features:
+
+- **Hero**: "Your customer is on their phone right now." Browser mock of Harbor Kitchen with menu, "Call to order", "Book a table", DoorDash/Uber Eats/Grubbub chips, floating "EXAMPLE SITE / BACK TO YOU" labels; stats: 2 weeks to launch, 100% yours, 30 days free changes, 1 price.
+- **New Integrations section** after the hero: chips for the apps a site hooks up to (DoorDash, Uber Eats, Grubbub, OpenTable, Google Maps, WhatsApp, Square, Instagram, Facebook, Cash App, Venmo, Toast, Clover).
+- **Services rewritten as functional lists**, per business type: restaurants (order buttons, book a table, menu), auto shops (appointment form asking the right questions first, service pages), every other local business (bookings, calls, WhatsApp, maps).
+- **"Results" replaces "Local favorites"**: three outcome-shaped testimonials from unnamed owners (restaurant, auto shop, café) describing post-launch wins (orders coming in the first week, more booked jobs, self-booking tables). Real business names/ratings are gone, matching the user's request for "reviews of businesses that got more customers." Testimonials are illustrative, not claims about real named businesses.
+- **No source citations on the page**: the "Sources: ..." line under Why and the reference-style numbers were removed at the user's request.
+- **Em dash sweep**: the meta title's em dash replaced; visible copy rule maintained.
+
+**Supersedes:** AD-04 (Local favorites), the source-citation part of AD-10. Prices still unpublished (AD-05).
 
 ## AD-06 — No hero stock photo; a live browser-mockup preview instead
 

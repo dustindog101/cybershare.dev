@@ -1,0 +1,28 @@
+---
+const apps = [
+  'DoorDash', 'Uber Eats', 'Grubhub', 'OpenTable', 'Google Maps', 'WhatsApp',
+  'Square', 'Instagram', 'Facebook', 'Cash App', 'Venmo', 'Toast', 'Clover',
+];
+---
+
+<section class="section section--tight container" id="hooks">
+  <div class="integrations reveal">
+    <div class="integrations__head">
+      <h2>It hooks up to what you already use</h2>
+      <p>DoorDash, Uber Eats, Grubhub, your maps listing, WhatsApp, your booking. One website that connects the tools you already run, so customers never have to chase down a phone number.</p>
+    </div>
+    <ul class="integrations__chips" aria-label="Apps and services a site can connect to">
+      {apps.map((a) => <li class="chip">{a}</li>)}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .integrations { gap: 26px; display: grid; grid-template-columns: 0.9fr 1.1fr; align-items: start; }
+  .integrations h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); letter-spacing: -0.02em; }
+  .integrations p { margin-top: 12px; color: var(--ink-2); font-size: 1rem; max-width: 44ch; }
+  .integrations__chips { display: flex; flex-wrap: wrap; gap: 10px; align-content: flex-start; }
+  @media (max-width: 880px) {
+    .integrations { grid-template-columns: 1fr; }
+  }
+</style>

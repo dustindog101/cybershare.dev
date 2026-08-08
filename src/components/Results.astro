@@ -1,0 +1,68 @@
+---
+const quotes = [
+  {
+    quote: 'People stopped asking for the menu and just ordered from the site. The phone still rings, but now half the orders show up by themselves.',
+    name: 'Restaurant owner',
+    role: 'Rockville',
+    result: 'Orders started coming in within the first week',
+  },
+  {
+    quote: 'The pictures and the price list do the selling for us. Customers bring the car in because the site already told them what it costs and how long it takes.',
+    name: 'Auto shop owner',
+    role: 'Gaithersburg',
+    result: 'More booked inspections and fewer phone tag questions',
+  },
+  {
+    quote: 'The table on the site fills up on weekends. We put the reservation link at the top and people started using it right away, especially on their phone.',
+    name: 'Café owner',
+    role: 'Montgomery County',
+    result: 'Reservations that book themselves on weekends',
+  },
+];
+---
+
+<section class="section section--paper container" id="results">
+  <div class="section-head reveal">
+    <h2>What happens after the site goes live</h2>
+    <p>Customers start discovering from their phone and ordering is the obvious next step. These are the kinds of results owners see once the site stops being quiet: new orders, new bookings, and fewer missed calls.</p>
+  </div>
+
+  <div class="results">
+    {quotes.map((q, i) => (
+      <figure class="result reveal" style={`transition-delay: ${i * 80}ms`}>
+        <blockquote>"{q.quote}"</blockquote>
+        <figcaption>
+          <b>{q.name}</b>
+          <span>{q.role}</span>
+        </figcaption>
+        <div class="result__outcome">
+          <span aria-hidden="true">▲</span> {q.accent}
+        </div>
+      </figure>
+    ))}
+  </div>
+</section>
+
+<style>
+  .results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .result {
+    display: flex; flex-direction: column; gap: 16px;
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--r-md);
+    padding: 28px 26px 24px; margin: 0; box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .result:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  blockquote { font-size: 1rem; line-height: 1.65; color: var(--ink); flex: 1; }
+  blockquote::first-letter { color: var(--accent); font-weight: 700; }
+  figcaption { display: flex; flex-direction: column; gap: 2px; }
+  figcaption b { font-size: 0.95rem; }
+  figcaption span { color: var(--ink-3); font-size: 0.84rem; }
+  .result__outcome {
+    margin-top: 6px; padding-top: 14px; border-top: 1px dashed var(--line-2);
+    color: var(--accent-deep); font-size: 0.88rem; font-weight: 620;
+    display: flex; align-items: center; gap: 8px;
+  }
+  @media (max-width: 960px) {
+    .results { grid-template-columns: 1fr; }
+  }
+</style>

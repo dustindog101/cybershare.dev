@@ -1,9 +1,9 @@
 ---
 const stats = [
-  { value: '14', unit: 'days', label: 'from first call to live site' },
-  { value: '100', unit: '%', label: 'yours. Site, words, and files' },
+  { value: '2', unit: 'weeks', label: 'from first call to a live site' },
+  { value: '100', unit: '%', label: 'yours. Site, content, and files' },
   { value: '30', unit: 'days', label: 'of free changes after launch' },
-  { value: '1', unit: '', label: 'price. Agreed before we build' },
+  { value: '1', unit: '', label: 'price you see before we build' },
 ];
 ---
 
@@ -11,21 +11,20 @@ const stats = [
   <div class="hero__grid">
     <div class="hero__copy">
       <p class="eyebrow">Websites for local businesses</p>
-      <h1>Most customers find you on their phone. <em>Make sure they find you.</em></h1>
+      <h1>Your customer is on their phone right now.</h1>
       <p class="hero__sub">
-        A simple, friendly website for your restaurant, shop, or service. People can see your menu, your hours, and how to call you. We build it, you own it.
+        A website that gets you orders, calls, and bookings. Say where you are, what you serve, how to order, and how to find you. We hook it up to DoorDash, Uber Eats, maps, you name it.
       </p>
       <div class="hero__actions">
-        <a class="btn btn--primary" href="#contact">Get your price</a>
+        <a class="btn btn--primary" href="#contact">
+          Get your price
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
         <a class="btn btn--ghost" href="#why">Why a website?</a>
       </div>
+      <p class="hero__note">No tech skills needed. We take care of the hard parts.</p>
     </div>
 
-    <!--
-      REAL component preview: an actual mini-version of a restaurant
-      client site (phone view) rendered live in the page. Not a
-      screenshot, not a mock: real UI, real markup.
-    -->
     <div class="hero__visual" aria-hidden="true">
       <div class="browser">
         <div class="browser__bar">
@@ -33,7 +32,7 @@ const stats = [
           <span class="browser__url">harborkitchenmd.com</span>
         </div>
         <div class="browser__body">
-          <p class="browser__crown">4.9 ★ · 126 reviews</p>
+          <p class="browser__crown">4.9 ★ · 126 reviews · Opens at 11:00</p>
           <h3 class="browser__name">Harbor Kitchen</h3>
           <p class="browser__tagline">Family-owned · Greek &amp; Mediterranean</p>
 
@@ -46,19 +45,24 @@ const stats = [
 
           <div class="browser__actions">
             <span class="browser__btn">Call to order</span>
-            <span class="browser__btn browser__btn--ghost">Full menu</span>
+            <span class="browser__btn browser__btn--ghost">Book a table</span>
           </div>
-          <p class="browser__hours">Open today, 11:00 to 22:00</p>
+          <div class="browser__deliver">
+            <span>Order on</span>
+            <span class="deliver-chip">DoorDash</span>
+            <span class="deliver-chip">Uber Eats</span>
+            <span class="deliver-chip">Grubhub</span>
+          </div>
         </div>
       </div>
 
       <div class="hero-chip hero-chip--top">
         <span class="hero-chip__label">EXAMPLE SITE</span>
-        <span class="hero-chip__value">This is what yours looks like</span>
+        <span class="hero-chip__value">See how it works</span>
       </div>
       <div class="hero-chip hero-chip--bottom">
-        <span class="hero-chip__label">YOURS</span>
-        <span class="hero-chip__value">You own the site, 100%</span>
+        <span class="hero-chip__label">BACK TO YOU</span>
+        <span class="hero-chip__value">You own this. 100%</span>
       </div>
     </div>
   </div>
@@ -76,12 +80,11 @@ const stats = [
 <style>
   .hero { padding-top: 72px; }
   .hero__grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 64px; align-items: center; }
-  .hero h1 { font-size: clamp(2.5rem, 5.2vw, 3.8rem); letter-spacing: -0.035em; line-height: 1.06; }
-  .hero h1 em { font-style: normal; color: var(--accent); }
-  .hero__sub { margin-top: 22px; font-size: 1.14rem; color: var(--ink-2); max-width: 44ch; }
-  .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
+  .hero h1 { font-size: clamp(2.6rem, 5.2vw, 3.9rem); letter-spacing: -0.035em; line-height: 1.05; }
+  .hero__sub { margin-top: 22px; font-size: 1.16rem; color: var(--ink-2); max-width: 52ch; }
+  .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+  .hero__note { margin-top: 16px; font-size: 0.88rem; color: var(--ink-3); }
 
-  /* browser preview */
   .hero__visual { position: relative; }
   .browser {
     background: var(--card); border: 1px solid var(--line-2); border-radius: var(--r-md);
@@ -116,9 +119,14 @@ const stats = [
     font-size: 0.8rem; font-weight: 600;
   }
   .browser__btn--ghost { background: transparent; color: var(--ink); border: 1px solid var(--line-2); }
-  .browser__hours { margin-top: 14px; font-size: 0.78rem; color: var(--ink-3); }
+  .browser__deliver { display: flex; align-items: center; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+  .browser__deliver > span:first-child { font-size: 0.76rem; color: var(--ink-3); }
+  .deliver-chip {
+    font-size: 0.72rem; font-weight: 600; color: var(--ink-2);
+    background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--r-pill);
+    padding: 5px 12px;
+  }
 
-  /* chips */
   .hero-chip {
     position: absolute; display: flex; flex-direction: column; gap: 2px;
     background: var(--card); border: 1px solid var(--line-2); border-radius: var(--r-sm);
@@ -127,9 +135,8 @@ const stats = [
   .hero-chip--top { top: -18px; left: -22px; }
   .hero-chip--bottom { bottom: -20px; right: -14px; }
   .hero-chip__label { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.14em; color: var(--ink-3); }
-  .hero-chip__value { font-weight: 620; font-size: 0.86rem; color: var(--ink); }
+  .hero-chip__value { font-weight: 620; font-size: 0.86rem; color: var(--ok); }
 
-  /* stats */
   .hero__stats {
     margin-top: 72px; padding-top: 30px; border-top: 1px solid var(--line);
     display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
@@ -137,7 +144,7 @@ const stats = [
   .stat { display: flex; flex-direction: column; gap: 4px; }
   .stat__value { font-size: 1.7rem; font-weight: 650; letter-spacing: -0.02em; }
   .stat__unit { font-size: 0.95rem; color: var(--accent); margin-left: 2px; font-weight: 600; }
-  .stat__label { font-size: 0.82rem; color: var(--ink-3); }
+  .stat__label { font-size: 0.85rem; color: var(--ink-3); }
 
   @media (max-width: 960px) {
     .hero__grid { grid-template-columns: 1fr; gap: 56px; }
